@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
 </head>
+<p class="lisans"><small>Atahan Çelik &copy Tüm hakları saklıdır.</small></p>
 <body>
     <nav class="navbar">
-        <h2 class="title">Moiranın Gözü</h2>
+        <h2 class="title">Moira Tarot</h2>
         <ul class="menu">
             <li class="active">ÜRÜNLERİMİZ</li>
             <li>HEDİYELER</li>
+            <li>İLETİŞİM</li>
         </ul>
         <ul class="menu__icons">
             <li><i class="bi bi-person"></i></li>
             <li><i class="bi bi-search"></i></li>
-            <li class="basket__icon">
+            <li class="basket__icon" onclick="toggleModal();" >
                 <i class="bi bi-handbag"></i>
                 <span class="basket__count">2</span>
             </li>
@@ -30,13 +32,13 @@
         class="carousel slide">
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="./assets/images/slide1.png" class="d-block w-100" alt=""/>
+                <img src="./assets/images/tarotbanner.png" class="d-block w-100" alt=""/>
               </div>
               <div class="carousel-item">
-                <img src="./assets/images/slide2.png" class="d-block w-100" alt=""/>
+                <img src="./assets/images/tarotbanner2.png" class="d-block w-100" alt=""/>
               </div>
               <div class="carousel-item">
-                <img src="./assets/images/slide3.png" class="d-block w-100" alt=""/>
+                <img src="./assets/images/tarotbanner3.png" class="d-block w-100" alt=""/>
               </div>
             </div>
             <button class="carousel-control-prev" type="button" 
@@ -61,18 +63,19 @@
 
       </ul>
     </div>
-      <div class="row">
+      <div class="row tarot__list">
         <div class="col-5 offset-2 my-5">
           <div class="row tarot__card">
             <div class="col-6">
-              <img class="img fluid shadow" src="/assets/images/rozet/wheeloffortune.png" 
-              width="258" height="400"/>
+              <img class="img fluid shadow" 
+              src="/assets/images/rozet/wheeloffortune.png" 
+              width="310" height="345"/>
             </div>
 
             <div class="col-6 d-flex flex-column justify-content-between">
               <div class="rozet__detay">
                 <span class="fos gray fs-5">Tarot Kart Rozet</span><br/>
-                <span class="fs-4 fw-bold">The Wheel of Fortune</span><br/>
+                <span class="fs-4 fw-bold">Kader Çarkı</span><br/>
                 <span class="rozet__star__rate">
                   <i class="bi bi-star-fill active"></i>
                   <i class="bi bi-star-fill"></i>
@@ -104,14 +107,13 @@
               <img 
               class="img fluid shadow" 
               src="/assets/images/rozet/justice.png"  
-              width="258" 
-              height="400"
+              width="310" height="345"
               />
             </div>
             <div class="col-6 d-flex flex-column justify-content-between">
               <div class="rozet__detay">
                 <span class="fos gray fs-5">Tarot Kart Rozet</span><br/>
-                <span class="fs-4 fw-bold">Justice</span><br/>
+                <span class="fs-4 fw-bold">Adalet</span><br/>
                 <span class="rozet__star__rate">
                   <i class="bi bi-star-fill active"></i>
                   <i class="bi bi-star-fill"></i>
@@ -139,14 +141,14 @@
           <div class="col-5 offset-2 my-5">
             <div class="row tarot__card">
               <div class="col-6">
-                <img class="img fluid shadow" src="/assets/images/rozet/wheeloffortune.png" 
-                width="258" height="400"/>
+                <img class="img fluid shadow" src="/assets/images/rozet/queenofcup.png" 
+                width="310" height="345"/>
               </div>
   
               <div class="col-6 d-flex flex-column justify-content-between">
                 <div class="rozet__detay">
                   <span class="fos gray fs-5">Tarot Kart Rozet</span><br/>
-                  <span class="fs-4 fw-bold">The Wheel of Fortune</span><br/>
+                  <span class="fs-4 fw-bold">Kupaların Kraliçesi</span><br/>
                   <span class="rozet__star__rate">
                     <i class="bi bi-star-fill active"></i>
                     <i class="bi bi-star-fill"></i>
@@ -157,10 +159,7 @@
                   </span>
                 </div>
                 <p class="rozet__anlami fos gray">
-                  Kader çarkı kartı kaderi, beklenmedik olayları ve ilerlemeyi 
-                  sembolize eder. 
-                  Bu kart size iyi şansın kötü olduğu kadar kolay 
-                  olduğunu ve her şeyin döngüler halinde olduğunu hatırlatır.
+                  Tarot'taki Kupaların Kraliçesi sevgi dolu, şefkatli, sezgisel, psişik ve manevi olmayı temsil eder. Tarot okumasındaki anlamdaki Kupa Kraliçesi, tüm Kupaların pozitif su enerjisinin ve bir Kraliçenin içe odaklanmasının birleşimidir.
                 </p>
                 <div>
                   <span class="black fw-bold fs-4 me-2">110₺</span>
@@ -177,15 +176,14 @@
               <div class="col-6">
                 <img 
                 class="img fluid shadow" 
-                src="/assets/images/rozet/justice.png"  
-                width="258" 
-                height="400"
+                src="/assets/images/rozet/tower.png"  
+                width="310" height="345"
                 />
               </div>
               <div class="col-6 d-flex flex-column justify-content-between">
                 <div class="rozet__detay">
                   <span class="fos gray fs-5">Tarot Kart Rozet</span><br/>
-                  <span class="fs-4 fw-bold">Justice</span><br/>
+                  <span class="fs-4 fw-bold">Kule</span><br/>
                   <span class="rozet__star__rate">
                     <i class="bi bi-star-fill active"></i>
                     <i class="bi bi-star-fill"></i>
@@ -196,11 +194,7 @@
                   </span>
                 </div>
                 <p class="rozet__anlami fos gray">
-                  Adalet kartı hakkın yerini bulması ve yapılanların 
-                  ödül ve cezalarının ilahi adalet tarafından dağıtılacağı 
-                  bir sürece girişin temsilcisidir. 
-                  Bu kartın ana temasını “ne ekersen onu biçersin” 
-                  sözüyle özetlemek yerindedir.
+                  Tarot'taki Kule kartı, eski fikirlerin çöküşüyle ilgili. Bir yapı aniden ve şiddetli bir şekilde çökerek kaosa ve sıkıntıya neden oldu, ancak yeni bir şeyin inşa edilmesi için de yer açtı. Bu kartın temel sembolleri kayalık bir çıkıntı üzerinde bir kule, bir şimşek, kuleden düşen birkaç figür ve aşağıda düşen dalgalar.
                 </p>
                 <div>
                   <span class="black fw-bold fs-4 me-2">110₺</span>
@@ -213,14 +207,14 @@
             <div class="col-5 offset-2 my-5">
               <div class="row tarot__card">
                 <div class="col-6">
-                  <img class="img fluid shadow" src="/assets/images/rozet/wheeloffortune.png" 
-                  width="258" height="400"/>
+                  <img class="img fluid shadow" src="/assets/images/rozet/thefool.png" 
+                  width="310" height="345"/>
                 </div>
     
                 <div class="col-6 d-flex flex-column justify-content-between">
                   <div class="rozet__detay">
                     <span class="fos gray fs-5">Tarot Kart Rozet</span><br/>
-                    <span class="fs-4 fw-bold">The Wheel of Fortune</span><br/>
+                    <span class="fs-4 fw-bold">Joker</span><br/>
                     <span class="rozet__star__rate">
                       <i class="bi bi-star-fill active"></i>
                       <i class="bi bi-star-fill"></i>
@@ -231,10 +225,7 @@
                     </span>
                   </div>
                   <p class="rozet__anlami fos gray">
-                    Kader çarkı kartı kaderi, beklenmedik olayları ve ilerlemeyi 
-                    sembolize eder. 
-                    Bu kart size iyi şansın kötü olduğu kadar kolay 
-                    olduğunu ve her şeyin döngüler halinde olduğunu hatırlatır.
+                    Tarot'taki joker kartı yeni başlangıçları simgeler. Kartın temel anlamı, jokerin yeni bir başlangıca doğru yol alması ve kişinin çantasının belirttiği gibi ihtiyaç duyduğu veya istediği her şeye sahip olmasıdır. Joker, kişiye bağlı bir paket, topuklarında bir köpek ve bir uçurum ile renkli kıyafetlerle gösterilir. 
                   </p>
                   <div>
                     <span class="black fw-bold fs-4 me-2">110₺</span>
@@ -251,15 +242,14 @@
                 <div class="col-6">
                   <img 
                   class="img fluid shadow" 
-                  src="/assets/images/rozet/justice.png"  
-                  width="258" 
-                  height="400"
+                  src="/assets/images/rozet/strength.png"  
+                  width="310" height="345"
                   />
                 </div>
                 <div class="col-6 d-flex flex-column justify-content-between">
                   <div class="rozet__detay">
                     <span class="fos gray fs-5">Tarot Kart Rozet</span><br/>
-                    <span class="fs-4 fw-bold">Justice</span><br/>
+                    <span class="fs-4 fw-bold">Güç</span><br/>
                     <span class="rozet__star__rate">
                       <i class="bi bi-star-fill active"></i>
                       <i class="bi bi-star-fill"></i>
@@ -270,11 +260,7 @@
                     </span>
                   </div>
                   <p class="rozet__anlami fos gray">
-                    Adalet kartı hakkın yerini bulması ve yapılanların 
-                    ödül ve cezalarının ilahi adalet tarafından dağıtılacağı 
-                    bir sürece girişin temsilcisidir. 
-                    Bu kartın ana temasını “ne ekersen onu biçersin” 
-                    sözüyle özetlemek yerindedir.
+                    Tarot'taki Güç kartı enerji ve cesarettir. Aslanın sıcak ve kükreyen enerjisi gibi cesaret ve şiddetli bir karttır. Ayrıca, korkmayan bir kadını da sembolize eder. Ölümsüz, inatçı ve kararlı. Güç kartının temel sembolleri, başının, bir aslanın ve bir gül zincirinin üzerinde asılı duran bir lemnisat (yanda sonsuz yaşam ve sonsuzluğu simgeleyen sekiz rakamı) olan bir kadındır.
                   </p>
                   <div>
                     <span class="black fw-bold fs-4 me-2">110₺</span>
@@ -287,14 +273,14 @@
               <div class="col-5 offset-2 my-5">
                 <div class="row tarot__card">
                   <div class="col-6">
-                    <img class="img fluid shadow" src="/assets/images/rozet/wheeloffortune.png" 
-                    width="258" height="400"/>
+                    <img class="img fluid shadow" src="/assets/images/rozet/twoofswords.png" 
+                    width="310" height="345"/>
                   </div>
       
                   <div class="col-6 d-flex flex-column justify-content-between">
                     <div class="rozet__detay">
                       <span class="fos gray fs-5">Tarot Kart Rozet</span><br/>
-                      <span class="fs-4 fw-bold">The Wheel of Fortune</span><br/>
+                      <span class="fs-4 fw-bold">Kılıç İkilisi</span><br/>
                       <span class="rozet__star__rate">
                         <i class="bi bi-star-fill active"></i>
                         <i class="bi bi-star-fill"></i>
@@ -305,10 +291,7 @@
                       </span>
                     </div>
                     <p class="rozet__anlami fos gray">
-                      Kader çarkı kartı kaderi, beklenmedik olayları ve ilerlemeyi 
-                      sembolize eder. 
-                      Bu kart size iyi şansın kötü olduğu kadar kolay 
-                      olduğunu ve her şeyin döngüler halinde olduğunu hatırlatır.
+                      Tarot'taki kılıç ikilisi, engellenmiş duygular, kaçınma ve çıkmaza işaret eder. Tarot okumasında Kılıçların İkisi, zor seçimleri dengelemek ve zor kararlar vermek anlamına gelir. Kart, kadının duygularını kendi içinde tutma ve dış yaklaşımlardan uzak durma mücadelesini sembolize ediyor.
                     </p>
                     <div>
                       <span class="black fw-bold fs-4 me-2">110₺</span>
@@ -325,15 +308,14 @@
                   <div class="col-6">
                     <img 
                     class="img fluid shadow" 
-                    src="/assets/images/rozet/justice.png"  
-                    width="258" 
-                    height="400"
+                    src="/assets/images/rozet/aceofswords.png"  
+                    width="310" height="345"
                     />
                   </div>
                   <div class="col-6 d-flex flex-column justify-content-between">
                     <div class="rozet__detay">
                       <span class="fos gray fs-5">Tarot Kart Rozet</span><br/>
-                      <span class="fs-4 fw-bold">Justice</span><br/>
+                      <span class="fs-4 fw-bold">Kılıç Ası</span><br/>
                       <span class="rozet__star__rate">
                         <i class="bi bi-star-fill active"></i>
                         <i class="bi bi-star-fill"></i>
@@ -344,11 +326,7 @@
                       </span>
                     </div>
                     <p class="rozet__anlami fos gray">
-                      Adalet kartı hakkın yerini bulması ve yapılanların 
-                      ödül ve cezalarının ilahi adalet tarafından dağıtılacağı 
-                      bir sürece girişin temsilcisidir. 
-                      Bu kartın ana temasını “ne ekersen onu biçersin” 
-                      sözüyle özetlemek yerindedir.
+                      Tarot'taki Kılıç Ası zihinsel güç, gerçek, adalet, yeni fikirler ve planlar, zafer ve cesaret anlamına gelir. Tarot okumasında Kılıçların Ası anlamı, zeka ve açık düşünme ile karşılaşılan zorluklardan biridir.
                     </p>
                     <div>
                       <span class="black fw-bold fs-4 me-2">110₺</span>
@@ -362,7 +340,7 @@
     </section>
     <div class="basket__modal">
       <div class="basket__items">
-        <i class="bi bi-x"></i>
+        <i class="bi-x" onclick="toggleModal()"></i>
         <h2 class="basket__title">Sepetiniz</h2>
         <ul class="basket__list">
           <li class="basket__item">
@@ -404,78 +382,19 @@
               <span class="yukselt">+</span>
             </div>
           </li>
-          <li class="basket__item">
-            <img src="/assets/images/rozet/justice.png" width="100" height="100"/>
-            <div class="basket__item-info">
-              <h3 class="tarot__name">Justice</h3>
-              <span class="fs-5">110₺</span><br />
-              <span class="tarot__sil">Sil</span>
-            </div>
-            <div class="tarot__count">
-              <span class="eksilt">-</span>
-              <span class="my-5">2</span>
-              <span class="yukselt">+</span>
-            </div>
-          </li>
-          <li class="basket__item">
-            <img src="/assets/images/rozet/wheeloffortune.png" width="100" height="100"/>
-            <div class="basket__item-info">
-              <h3 class="tarot__name">The Weel of Fortune</h3>
-              <span class="fs-5">110₺</span><br />
-              <span class="tarot__sil">Sil</span>
-            </div>
-            <div class="tarot__count">
-              <span class="eksilt">-</span>
-              <span class="my-5">2</span>
-              <span class="yukselt">+</span>
-            </div>
-          </li>
-          <li class="basket__item">
-            <img src="/assets/images/rozet/justice.png" width="100" height="100"/>
-            <div class="basket__item-info">
-              <h3 class="tarot__name">Justice</h3>
-              <span class="fs-5">110₺</span><br />
-              <span class="tarot__sil">Sil</span>
-            </div>
-            <div class="tarot__count">
-              <span class="eksilt">-</span>
-              <span class="my-5">2</span>
-              <span class="yukselt">+</span>
-            </div>
-          </li>
-          <li class="basket__item">
-            <img src="/assets/images/rozet/wheeloffortune.png" width="100" height="100"/>
-            <div class="basket__item-info">
-              <h3 class="tarot__name">The Weel of Fortune</h3>
-              <span class="fs-5">110₺</span><br />
-              <span class="tarot__sil">Sil</span>
-            </div>
-            <div class="tarot__count">
-              <span class="eksilt">-</span>
-              <span class="my-5">2</span>
-              <span class="yukselt">+</span>
-            </div>
-          </li>
-          <li class="basket__item">
-            <img src="/assets/images/rozet/justice.png" width="100" height="100"/>
-            <div class="basket__item-info">
-              <h3 class="tarot__name">Justice</h3>
-              <span class="fs-5">110₺</span><br />
-              <span class="tarot__sil">Sil</span>
-            </div>
-            <div class="tarot__count">
-              <span class="eksilt">-</span>
-              <span class="my-5">2</span>
-              <span class="yukselt">+</span>
-            </div>
-          </li>
         </ul>
+        <div class="basket__total">
+          <span class="fw-bold mb-3 fs-4">Toplam : 330₺</span>
+          <button class="btn__purple">ÖDEMEYE GEÇ</button>
+        </div>
       </div>
     </div>
     <script 
     type="text/javascript"
     src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 
-    <p><small>Atahan Çelik &copy Tüm hakları saklıdır.</small></p>
+    
 </body>
+
 </html>
