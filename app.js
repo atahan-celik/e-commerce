@@ -78,7 +78,7 @@ const createTarotItemsHtml = () => {
             }
               
             </div>
-            <button class="btn__purple" onclick="addTarotToBasket(${
+            <button class="btn__burgundy" onclick="addTarotToBasket(${
                 tarot.id
             })">Sepete Ekle</button>
             </div>
