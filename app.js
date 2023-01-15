@@ -52,7 +52,7 @@ const createTarotItemsHtml = () => {
           <div class="col-6">
             <img 
             class="img fluid shadow" 
-            src="${tarot.imgSource}"
+            src="${tarot.imgSource}" data-lightbox="roadtrip"
             width="258" 
             height="400"/>
           </div>
@@ -160,7 +160,7 @@ const listBasketItems = () => {
     });
 
     basketListEl.innerHTML = basketListHtml ? basketListHtml : 
-    `<li class="basket__item">Sepetinizde Ürün Bulunmuyor.</li>`;
+    `<li class="basket__item">Sepetinizde Ürün Bulunmamaktadır.</li>`;
     totalPriceEl.innerHTML = 
     totalPrice > 0 ? "Toplam : " + totalPrice + "₺" : null ;
 };
