@@ -1,16 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Cinzel', sans-serif;
     padding: 0;
     margin: 0;
 }
+
+
 
 :root {
     --black: #1c2a39;
     --gray: #5c6a79;
     --purple: #4c3db2;
+    --transition: all 250ms ease-in-out;
+}
+
+.lisans {
+
+    bottom: 1px;
+    position: fixed;
+    font-weight: bold;
+
+   
 }
 
 .navbar{
@@ -67,8 +79,12 @@
     font-weight: bold;
 }
 
+.basket__count:empty{
+    display: none;
+}
+
 .slider {
-    width: 80%;
+    width: 40%;
     margin-left: auto;
     margin-right: auto;
     height: 600px;
@@ -76,7 +92,7 @@
 }
 
 .slider img {
-    height: 400px;
+    height: 620px;
 }
 
 .store {
@@ -86,8 +102,12 @@
 }
 
 .tarot__card {
-    height: 400px;
+    height: 330px;
 
+}
+
+.tarot__card img{
+    height: 330px;
 }
 
 .fos {
@@ -139,6 +159,7 @@
     font-weight: bold;
     background-color: transparent;
     transition: all 250ms ease-in-out;
+    padding: 3px;
     
 }
 
@@ -179,13 +200,13 @@
     color: #4c3db2;
 }
 
-.filter li.active{
+.filter li .active{
     color: var(--purple);
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.filter li.active::before {
+.filter li .active::before {
     content: "";
     display: inline-block;
     width: 10;
@@ -200,23 +221,36 @@
 
 .basket__modal {
     position: fixed;
+    opacity: 0;
     left: 0;
     top: 0;
     background-color: #5c6a7950;
     width: 100%;
     height: 100%;
-    z-index: 999;
+    z-index: -1;
+    transition: var(--transition);
 
+}
+
+.basket__modal.active {
+    opacity: 1;
+    z-index: 999;
 }
 
 .basket__items {
-    width: 450px;
+    position: relative;
+    width: 0;
     background-color: white;
     height: 100%;
     float: right;
+    transition: var(--transition);
 }
 
-.basket__items .bi-x {
+.basket__modal.active .basket__items {
+    width: 450px;
+}
+
+.basket__items .bi-x{
     position: absolute;
     left: 0;
     top: 0;
@@ -253,13 +287,14 @@
     width: 250px;
 }
 
-.basket__item-info .tarot__name{
+.basket__item-info .tarot__name {
     font-size: 16px;
     font-weight: bold;
 }
 
 .basket__item-info .tarot__price {
     font-size: 16px;
+    font-weight: bold;
      
 }
 
@@ -287,6 +322,25 @@
 .tarot__count .eksilt .yukselt {
     cursor: pointer;
     color: var(--purple);
+    
 
 
+}
+
+.basket__total {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 5%;
+    align-items: center;
+    width: inherit;
+}
+
+.basket__total button{
+    width: 250px;
+     
+}
+
+.total__price:empty + .btn__purple{
+    display: none;
 }
