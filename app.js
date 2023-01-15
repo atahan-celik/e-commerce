@@ -1,4 +1,23 @@
-let tarotList = [] ;
+let tarotList = [], 
+basketList = [] ;
+
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-bottom-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
 
 const toggleModal = () => {
     const basketModalEl = document.querySelector(".basket__modal")
@@ -6,10 +25,10 @@ const toggleModal = () => {
 }
 
 const getTarots = () => {
-    fetch(".products.json")
-    .then((res) => res.json())
-    .then((tarots) => (tarotList = tarots));
-}
+    fetch("products.json")
+        .then((res) => res.json())
+        .then((tarots) => (tarotList = tarots));
+};
 
 getTarots();
 
@@ -43,7 +62,7 @@ const createTarotItemsHtml = () => {
               <span class="fos gray fs-5">${tarot.author}</span><br/>
               <span class="fs-4 fw-bold">${tarot.name}</span><br/>
               <span class="rozet__star__rate">
-                ${createTarotStars(book.starRate)}
+                ${createTarotStars(tarot.starRate)}
                 <span class="gray">${tarot.reviewCount} inceleme</span>
               </span>
             </div>
@@ -59,7 +78,9 @@ const createTarotItemsHtml = () => {
             }
               
             </div>
-            <button class="btn__purple">Sepete Ekle</button>
+            <button class="btn__purple" onclick="addTarotToBasket(${
+                tarot.id
+            })">Sepete Ekle</button>
             </div>
             
           </div>
@@ -69,7 +90,152 @@ const createTarotItemsHtml = () => {
     tarotListEl.innerHTML = tarotListHtml
 };
 
+const TAROT_TYPES = {
+    ALL: "Tümü",
+    TAROT: "Rozet, Broş",
+ 
+};
+
+const createTarotTypesHtml = () => {
+    const filterEl = document.querySelector(".filter");
+    let filterHtml = "";
+    let filterTypes = ["ALL"];
+    tarotList.forEach(tarot => {
+        if(filterTypes.findIndex(filter => filter == tarot.type) == -1) 
+        filterTypes.push(tarot.type);
+    });
+
+    filterTypes.forEach(type, index => {
+        filterHtml += `<li class="${index == 0 ? "active" : null}" onclick="filterTarots(tihs)" data-types"${type}">
+        ${TAROT_TYPES[type] || type}</li>`;
+
+    });
+
+    filterEl.innerHTML = filterHtml;
+};
+
+// Filtreleme işlevi
+
+const filterTarots = (filterEl) => {
+    document.querySelector(".filter .active").classList.remove("active");
+    filterEl.classList.add("active");
+    let tarotType = filterEl.dataset.type;
+    getTarots();
+        if(tarotType== "ALL")
+            tarotList = tarotList.filter(tarot => tarot.type == tarotType);
+    createTarotItemsHtml();
+};
+
+// Sepet Ürünlerini Listeleme işlevi
+
+const listBasketItems = () => {
+    localStorage.setItem("basketList", JSON.stringify(basketList));
+    const basketListEl = document.querySelector(".basket__list");
+    const basketCountEl = document.querySelector(".basket__count");
+    basketCountEl.innerHTML = basketList.length > 0 ? basketList .length : null;
+    const totalPriceEl = document.querySelector(".total__price");
+
+    
+    let basketListHtml = "";
+    let totalPrice = 0;
+    basketList.forEach(item => {
+        totalPrice += item.product.price * item.quantity;
+        basketListHtml += `<li class="basket__item">
+        <img 
+        src="${item.product.imgSource}"
+        width="100"
+        height="100"
+        />
+        <div class="basket__item-info">
+          <h3 class="tarot__name">${item.product.name}</h3>
+          <span class="tarot__price">${item.product.price}₺</span><br />
+          <span class="tarot__sil" onclick="removeItemsToBasket(${item.product.id})">Sil</span>
+        </div>
+        <div class="tarot__count">
+          <span class="eksilt" onclick="basketEksiltme(${item.product.id})">-</span>
+          <span class="my-5">${item.quantity}</span>
+          <span class="yukselt" onclick="basketYukseltme(${item.product.id})">+</span>
+        </div>
+      </li>`;
+    });
+
+    basketListEl.innerHTML = basketListHtml ? basketListHtml : 
+    `<li class="basket__item">Sepetinizde Ürün Bulunmuyor.</li>`;
+    totalPriceEl.innerHTML = 
+    totalPrice > 0 ? "Toplam : " + totalPrice + "₺" : null ;
+};
+
+// Sepete ürün ekleme işlevi
+
+const addTarotToBasket = (tarotId) => {
+    let findedTarot = tarotList.find((tarot) => tarot.id == tarotId );
+    if (findedTarot) {
+        const basketAlreadyIndex = basketList.findIndex(
+            (basket) => basket.product.id == tarotId
+        );
+        if (basketAlreadyIndex == -1) {
+            let addedItem = { quantity: 1, product: findedTarot};
+            basketList.push(addedItem);
+        }else{
+            if (basketList[basketAlreadyIndex].quantity < 
+                basketList[basketAlreadyIndex].product.stock)
+                basketList[basketAlreadyIndex].quantity +=1;
+                else {
+                    toastr.error("Üzgünüz, stoklarımız da bu ürün kalmamıştır.");
+                return;
+            }
+        }
+        listBasketItems();
+        toastr.success("Ürün sepete eklendi.");
+    }   
+    
+};
+
+// Sepetten ürün silme işlevi
+
+const removeItemsToBasket = (tarotId) => {
+    const findedIndex = basketList.findIndex(basket => basket.product.id == tarotId);
+
+    if (findedIndex !=-1) {
+        basketList.splice(findedIndex,1);
+    }
+    listBasketItems();
+};
+
+// Sepetteki ürünü azaltma işlevi
+
+const basketEksiltme = (tarotId) => {
+    const findedIndex = basketList.findIndex(basket => basket.product.id == tarotId);
+    if(findedIndex !=-1) {
+        if (basketList[findedIndex].quantity !=1)
+        basketList[findedIndex].quantity -= 1;
+        else removeItemsToBasket(tarotId);
+        listBasketItems();
+    }
+};
+
+// Sepetteki ürünü arttırma işlevi
+
+const basketYukseltme = (tarotId) => {
+    const findedIndex = basketList.findIndex(basket => basket.product.id == tarotId);
+    if(findedIndex !=-1) {
+        if (basketList[findedIndex].quantity < basketList[findedIndex].product.stock)
+        basketList[findedIndex].quantity += 1;
+        else toastr.error("Üzgünüz, stoklarımız da bu ürün kalmamıştır.");
+        listBasketItems();
+    }
+};
+
+// Sayfa yenilendiğinde bilgileri hafıza da tutma işlevi
+
+if(localStorage.getItem("basketList")) {
+    basketList = JSON.parse(localStorage.getItem("basketList"));
+    listBasketItems();
+}
+
 setTimeout(() => {
     createTarotItemsHtml();
-    
-} 100);
+    createTarotTypesHtml();
+}, 100);
+
+toastr.info("")
