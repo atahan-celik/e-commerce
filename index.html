@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maxium-scale=1">
     <title>Moira | Broş & Rozet</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/toastr/toastr.min.css">
+
 </head>
-<p class="lisans"><small>Atahan Çelik &copy Tüm hakları saklıdır.</small></p>
+
 <body>
+  <footer>
+    <marquee direction=left>Saat 15:00'a kadar verilen siparişler aynı gün kargoya teslim edilmektedir.Bizleri tercih ettiğiniz için teşekkür ederiz.</marquee>
+  </footer> 
     <nav class="navbar">
-        <h2 class="title">Moira Tarot</h2>
+      
+        <h2 class="title"><img src="./assets/images/logo2.png" width="80" height="75"/>Moira Tarot</h2>
         <ul class="menu">
             <li class="active">ÜRÜNLERİMİZ</li>
-            <li>HEDİYELER</li>
-            <li>İLETİŞİM</li>
+            <li class="active">HEDİYELER</li>
+            <li class="active">İLETİŞİM</li>
         </ul>
         <ul class="menu__icons">
+            <li><i class="bi bi-search"><input type="text"  placeholder="Ürün ara" class="navbar-search-input" id="headerSearchInput" width="40" height="10"></i></li>
             <li><i class="bi bi-person"></i></li>
-            <li><i class="bi bi-search"></i></li>
             <li class="basket__icon" onclick="toggleModal();" >
                 <i class="bi bi-handbag"></i>
                 <span class="basket__count"></span>
@@ -28,6 +33,7 @@
         </ul>
 
     </nav>
+    
     <section class="slider">
         <div id="carouselTarotSlider" 
         class="carousel slide">
@@ -69,7 +75,7 @@
           <div class="row tarot__card">
             <div class="col-6">
               <img class="img fluid shadow" 
-              src="/assets/images/rozet/wheeloffortune.png" 
+              src="/assets/images/rozet/wheeloffortune.png"
               width="310" height="345"/> 
             </div>
 
@@ -105,11 +111,9 @@
           <div class="col-5 my-5">
             <div class="row tarot__card">
             <div class="col-6">
-              <img 
-              class="img fluid shadow" 
-              src="/assets/images/rozet/justice.png"  
-              width="310" height="345"
-              />
+              <a href="/assets/images/rozet/justice.png" rel="lightbox" title="my caption" width="310" height="345"></a>
+              
+              
             </div>
             <div class="col-6 d-flex flex-column justify-content-between">
               <div class="rozet__detay">
@@ -345,7 +349,7 @@
         <h2 class="basket__title">Sepetiniz</h2>
         <ul class="basket__list">
           <li class="basket__item">
-            Sepetinizde Ürün Bulunmuyor.
+            Sepetinizde Ürün Bulunmamaktadır.
           </li>
         </ul>
         <div class="basket__total">
@@ -359,10 +363,9 @@
     src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="./assets/jquery/jquery.min.js"></script>
     <script src="./assets/toastr/toastr.min.js"></script>
-
     <script type="text/javascript" src="app.js"></script>
 
     
+ 
 </body>
-
 </html>
