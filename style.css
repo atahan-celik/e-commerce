@@ -17,27 +17,34 @@
 }
 
 
-.lisans {
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    font-weight: bold;
-    margin-left: 5%;
-
-   
-}
 
 .navbar{
     height: 120px;
     width: 80%;
-    margin-left: 10%;
+    margin-left: 3%;
 }
 
 .title{
+    
     font-weight: bold;
 }
 
-.menu, .menu__icons{
+.menu {
+    position: relative;
+    right: 250px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    color: var(--gray);
+    cursor: pointer;
+
+}
+
+.menu__icons{
+    position: relative;
+    left: 965px;
+    top: -70px;
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -47,10 +54,19 @@
 }
 
 .menu .active{
-   
+    height: 30px;
+    width: 160px;
+    text-align: center;
+    
     color: var(--black);
+    transition: all 250ms ease-in-out;
     font-weight: bold;
     
+}
+
+.menu .active:hover{
+    color: white;
+    background-color: var(--burgundy);
 }
 
 .menu li, 
@@ -97,6 +113,7 @@
 
 .slider img {
     height: 620px;
+    border-radius: 10px;
 }
 
 .store {
@@ -112,6 +129,15 @@
 
 .tarot__card img{
     height: 330px;
+    border-radius: 10px;
+    transition: all 0.5s;
+
+}
+
+.tarot__card img:hover{
+    transform: scale(1.2);
+    z-index: 2;
+
 }
 
 .fos {
@@ -278,6 +304,7 @@
     margin-top: 3rem;
     max-height: 650px;
     overflow-y: auto;
+    
 
 }
 
@@ -286,7 +313,7 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
-
+    
 }
 
 .basket__item-info {
@@ -294,7 +321,7 @@
 }
 
 .basket__item-info .tarot__name {
-    font-size: 17px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -362,3 +389,10 @@
 .total__price:empty + .btn__burgundy{
     display: none;
 }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--burgundy);
+    color: rgb(255, 255, 255);
+  }
