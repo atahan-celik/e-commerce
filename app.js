@@ -2,7 +2,7 @@ let tarotList = [],
 basketList = [] ;
 
 toastr.options = {
-    "closeButton": false,
+    "closeButton": true,
     "debug": false,
     "newestOnTop": false,
     "progressBar": false,
@@ -18,6 +18,26 @@ toastr.options = {
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut"
   }
+
+// Slider
+
+const panels = document.querySelectorAll('.panel')
+
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses()
+        panel.classList.add('active')
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active')
+    })
+}
+
+
+// Sepet açıp kapatma
 
 const toggleModal = () => {
     const basketModalEl = document.querySelector(".basket__modal")
@@ -73,7 +93,7 @@ const createTarotItemsHtml = () => {
               <span class="black fw-bold fs-4 me-2">${tarot.price}₺</span>
               ${
                 tarot.oldPrice ? 
-                `<span class="fs-4 fw-bold old__price">${tarot.oldPrice}₺</span>`
+                `<span class="fs-6 fw-bold old__price">${tarot.oldPrice}₺</span>`
             : ""
             }
               
