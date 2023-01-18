@@ -19,12 +19,12 @@
       
         <h2 class="title"><img src="./assets/images/logo2.png" width="80" height="75"/>Moira Tarot</h2>
         <ul class="menu">
-            <li class="active">ÜRÜNLERİMİZ</li>
-            <li class="active">HEDİYELER</li>
-            <li class="active">İLETİŞİM</li>
+          <a href="#" >ÜRÜNLERİMİZ</a>
+          <a href="#" >HAKKIMIZDA</a>
+          <a href="#" >İLETİŞİM</a>
         </ul>
         <ul class="menu__icons">
-            <li><i class="bi bi-search"><input type="text"  placeholder="Ürün ara" class="navbar-search-input" id="headerSearchInput" width="40" height="10"></i></li>
+            <li><i class="bi bi-search"><input type="text" class="input" placeholder="Ara.." ></i></li>
             <li><i class="bi bi-person"></i></li>
             <li class="basket__icon" onclick="toggleModal();" >
                 <i class="bi bi-handbag"></i>
@@ -35,41 +35,27 @@
     </nav>
     
     <section class="slider">
-        <div id="carouselTarotSlider" 
-        class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./assets/images/tarotbanner.png" class="d-block w-100" alt=""/>
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/images/tarotbanner2.png" class="d-block w-100" alt=""/>
-              </div>
-              <div class="carousel-item">
-                <img src="./assets/images/tarotbanner3.png" class="d-block w-100" alt=""/>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" 
-            data-bs-target="#carouselTarotSlider" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" 
-            data-bs-target="#carouselTarotSlider" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+      <div class="container">
+        <div class="panel active" style="background-image: url('https://i.hizliresim.com/8z332xr.jpeg')">
+          <h3>hayatın kendi akışı içinde tazelenme - 2.Şans</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://i.hizliresim.com/5n60nun.jpeg')">
+          <h3>🍃 | 🧭 | 🎑</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://i.hizliresim.com/qkfd4h8.jpeg')">
+          <h3>AŞIKLAR</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://i.hizliresim.com/grhjev9.jpeg')">
+          <h3>JOKER</h3>
+        </div>
+        <div class="panel" style="background-image: url('https://i.hizliresim.com/nt8szny.jpeg')">
+          <h3>DENGE</h3>
+        </div>
+  
+      </div>
     </section>
     <section class="store my-5">
-      <div class="filter__background">
-      <ul class="filter">
-        <li>Tümü</li>
-        <li>Astroloji</li>
-        <li>Tarot</li>
-        <li></li>
 
-      </ul>
-    </div>
       <div class="row tarot__list">
         <div class="col-5 offset-2 my-5">
           <div class="row tarot__card">
