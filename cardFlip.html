@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kart Çekim</title>
+    <link rel="stylesheet" href="./assets/cardFlip/cardFlip.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <footer>
+        <marquee direction=left>Saat 15:00'a kadar verilen siparişler aynı gün kargoya teslim edilmektedir.Bizleri tercih ettiğiniz için teşekkür ederiz.</marquee>
+      </footer> 
+        <nav class="navbar">
+          
+            <h2 class="title"><img src="./assets/images/logo2.png" width="80" height="75"/>Moira Tarot</h2>
+            <ul class="menu">
+              <a href="./index.html" >ANA SAYFA</a>
+              <a href="./cardFlip.html" >TAROT KART ÇEK</a>
+              <a href="#" >İLETİŞİM</a>
+            </ul>
+            <ul class="menu__icons">
+                <li><i class="bi bi-search"><input type="text" class="input" placeholder="Ara.." ></i></li>
+                <li><i class="bi bi-person"></i></li>
+                <li class="basket__icon" onclick="toggleModal();" >
+                    <i class="bi bi-handbag"></i>
+                    <span class="basket__count"></span>
+                </li>
+            </ul>
+    
+        </nav>
+
+    <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/justice-tarot-card-meaning.jpg" width="150"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/wheel-of-fortune-tarot-card.jpg" width="150"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/death-tarot-card-image.jpg" width="150"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/judgement-tarot-card-design.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/strength-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/temperance-card-in-tarot.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-chariot-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-devil-card-upright.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-emperor-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-empress-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-fool-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-hanged-man-tarot-card-1.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-hermit-tarot-card-meaning-rider-waite.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-hierophant-tarot.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-high-priestess-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-lovers-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-magician-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-moon-tarot-card-original.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-star-card-in-tarot.jpg" width="150"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-sun-card-tarot-reading.jpg" width="150"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-tower-tarot-card-meaning.jpg" width="150"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/the-world-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/ace-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/two-of-cups-tarot-card-600x988.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/three-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/four-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/five-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+
+
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/six-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/seven-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/eight-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/nine-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/ten-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/page-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/knight-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/queen-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      <div class="scene scene--card">
+        <div class="card">
+          <div class="card__face card__face--front"><img src="./assets/cardFlip/images/back.jpg" width="160"></div>
+          <div class="card__face card__face--back"><img src="./assets/cardFlip/images/king-of-cups-tarot-card.jpg" width="160"></div>
+        </div>
+      </div>
+      
+      <script src="./assets/cardFlip/cardFlip.js"></script>
+      <script src="./app.js"></script>
+</body>
+</html>
